@@ -14,7 +14,7 @@ def add(n1: int, n2: int) -> int:
 def draw_pie_chart(numbers:list[int])->Image:
     """繪製圓餅圖工具"""
     plt.pie(numbers)
-    buffer=io.ByteIO() #savefig() 就是規定「你要給我一個地方寫進去」
+    buffer=io.BytesIO() #savefig() 就是規定「你要給我一個地方寫進去」
     #io.BytesIO() 就是騙過它：給它一個長得像檔案、其實在記憶體裡的容器
     plt.savefig(buffer,format="png")
     return Image(data=buffer.getvalue(), format="png")
